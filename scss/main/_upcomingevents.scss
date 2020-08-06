@@ -1,0 +1,110 @@
+.upcoming {
+  padding: 80px 0 100px;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .upcoming-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    h3 {
+      font-size: 30px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      color: #fff;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+
+      li {
+        margin: 0 12px;
+
+        a {
+          color: rgba(255, 255, 255, 0.75);
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 12px;
+        }
+
+        a.selected {
+          color: #35e7aa;
+          font-weight: bolder;
+          border-bottom: 1px dotted #35e7aa;
+        }
+      }
+      li:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .upcoming-main {
+    .list-titles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 2fr;
+      border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+      padding: 0 0 20px;
+      span {
+        font-weight: bolder;
+      }
+      span:first-of-type {
+        padding-left: 20px;
+      }
+    }
+
+    .race-item {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-bottom: 1px solid rgba(230, 230, 230, 0.3);
+      padding: 20px 0;
+
+      span:first-of-type {
+        padding-left: 20px;
+        font-weight: bolder;
+      }
+      span:nth-of-type(2) {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 70px;
+      }
+      span:nth-of-type(2n + 2) {
+        color: rgba(255, 255, 255, 0.75);
+      }
+      span {
+        align-self: center;
+      }
+
+      a {
+        align-self: center;
+        display: inline-block;
+        width: 110px;
+        color: #fff;
+        background: #cc0033;
+        font-weight: bolder;
+        font-size: 12px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 13px 0px;
+        transition: 0.2s ease all;
+
+        &:hover {
+          background: #aa002a;
+        }
+      }
+    }
+    .race-item:nth-of-type(2n + 3) {
+      background: rgba(230, 230, 230, 0.15);
+    }
+  }
+}
