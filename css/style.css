@@ -5,9 +5,8 @@
   font-family: sans-serif; }
 
 .upcoming {
-  padding: 80px 0 100px;
-  height: 100vh;
-  background: #000;
+  padding: 80px 0 300px;
+  background: #101010;
   color: #fff; }
   .upcoming .container {
     max-width: 1300px;
