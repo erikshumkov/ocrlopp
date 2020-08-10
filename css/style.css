@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: sans-serif; }
 
+html {
+  background: #101010; }
+
 .upcoming {
   padding: 80px 0 300px;
   background: #101010;
@@ -85,7 +88,7 @@
   .upcoming .upcoming-main .race-item:nth-of-type(2n + 3) {
     background: rgba(230, 230, 230, 0.15); }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .upcoming .container {
     max-width: 98%; }
   .upcoming .upcoming-header h3 {
@@ -112,7 +115,7 @@
         font-weight: normal;
         display: flex;
         justify-content: space-between;
-        padding-right: 20px; }
+        padding-right: 50px; }
         .upcoming .upcoming-main .race-item .event .date-mobile .date-mobile__d {
           font-style: italic;
           margin-right: 5px;
@@ -131,5 +134,9 @@
       margin-right: 10px;
       font-size: 9px;
       letter-spacing: 1px; } }
+@media (max-width: 500px) {
+  .upcoming .upcoming-main .race-item .event .date-mobile {
+    justify-content: space-between;
+    padding-right: 0; } }
 
 /*# sourceMappingURL=style.css.map */
