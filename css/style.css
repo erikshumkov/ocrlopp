@@ -51,14 +51,18 @@
     grid-template-columns: repeat(5, 1fr);
     border-bottom: 1px solid rgba(230, 230, 230, 0.3);
     padding: 20px 0; }
-    .upcoming .upcoming-main .race-item span:first-of-type {
+    .upcoming .upcoming-main .race-item .event {
+      align-self: center;
       padding-left: 20px;
       font-weight: bolder; }
-    .upcoming .upcoming-main .race-item span:nth-of-type(2) {
+      .upcoming .upcoming-main .race-item .event .date-mobile {
+        display: none; }
+    .upcoming .upcoming-main .race-item .location {
       display: flex;
       justify-content: space-between;
       padding-right: 70px; }
-    .upcoming .upcoming-main .race-item span:nth-of-type(2n + 2) {
+    .upcoming .upcoming-main .race-item .price,
+    .upcoming .upcoming-main .race-item .location {
       color: rgba(255, 255, 255, 0.75); }
     .upcoming .upcoming-main .race-item span {
       align-self: center; }
@@ -74,10 +78,58 @@
       text-transform: uppercase;
       text-align: center;
       padding: 13px 0px;
+      border-radius: 20px;
       transition: 0.2s ease background-color; }
       .upcoming .upcoming-main .race-item a:hover {
         background: #aa002a; }
   .upcoming .upcoming-main .race-item:nth-of-type(2n + 3) {
     background: rgba(230, 230, 230, 0.15); }
+
+@media (max-width: 500px) {
+  .upcoming .container {
+    max-width: 98%; }
+  .upcoming .upcoming-header h3 {
+    margin-left: 5px;
+    font-size: 26px; }
+  .upcoming .upcoming-main .list-titles {
+    grid-template-columns: repeat(3, 1fr); }
+    .upcoming .upcoming-main .list-titles span:first-of-type {
+      padding-left: 5px; }
+    .upcoming .upcoming-main .list-titles__location, .upcoming .upcoming-main .list-titles__date {
+      display: none; }
+    .upcoming .upcoming-main .list-titles__price {
+      padding-right: 25px;
+      justify-self: center; }
+  .upcoming .upcoming-main .race-item {
+    grid-template-columns: repeat(3, 1fr); }
+    .upcoming .upcoming-main .race-item .event {
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+      padding-left: 5px; }
+      .upcoming .upcoming-main .race-item .event .date-mobile {
+        margin-top: 5px;
+        font-weight: normal;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 20px; }
+        .upcoming .upcoming-main .race-item .event .date-mobile .date-mobile__d {
+          font-style: italic;
+          margin-right: 5px;
+          color: rgba(255, 255, 255, 0.75); }
+    .upcoming .upcoming-main .race-item .price {
+      font-size: 13px; }
+    .upcoming .upcoming-main .race-item .price,
+    .upcoming .upcoming-main .race-item .action {
+      justify-self: center; }
+    .upcoming .upcoming-main .race-item .location {
+      display: none !important; }
+    .upcoming .upcoming-main .race-item .date {
+      display: none; }
+    .upcoming .upcoming-main .race-item .action {
+      justify-self: end;
+      margin-right: 10px;
+      font-size: 9px;
+      letter-spacing: 1px; } }
 
 /*# sourceMappingURL=style.css.map */
