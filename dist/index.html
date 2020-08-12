@@ -9,13 +9,7 @@
       integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-      integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../dist/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>OCR-Lopp</title>
   </head>
   <body>
@@ -24,39 +18,30 @@
         <div class="upcoming-header">
           <h3>Kommande OCR-Lopp</h3>
         </div>
+
+        <!-- <div class="upcoming-menu">
+          <div class="country">
+            <select name="country" id="country">
+              <option value="datum">Datum</option>
+              <option value="sverige">Sverige</option>
+              <option value="norge">Norge</option>
+              <option value="danmark">Danmark</option>
+              <option value="finland">Finland</option>
+            </select>
+          </div>
+        </div> -->
+
         <div class="upcoming-main">
           <div class="list-titles">
-            <span>Event</span>
-            <span>Plats</span>
-            <span>Datum</span>
-            <span>Pris</span>
+            <span class="list-titles__event">Event</span>
+            <span class="list-titles__location">Plats</span>
+            <span class="list-titles__date">Datum</span>
+            <span class="list-titles__price">Pris</span>
           </div>
-
-          <div class="race-item">
-            <span>Hell Run</span>
-            <span>Mantorp <span class="flag-icon flag-icon-se"></span></span>
-            <span>8 & 9 Aug, 2020</span>
-            <span>695 SEK</span>
-            <a href="#!">visa mer</a>
-          </div>
-
-          <div class="race-item">
-            <span>Next Challenge</span>
-            <span>Kalmar <span class="flag-icon flag-icon-se"></span></span>
-            <span>29 Aug, 2020</span>
-            <span>645 SEK</span>
-            <a href="#!">visa mer</a>
-          </div>
-
-          <div class="race-item">
-            <span>Evolution Race</span>
-            <span>Hedehusene <span class="flag-icon flag-icon-dk"></span></span>
-            <span>26 Sep, 2020</span>
-            <span>349 DKK</span>
-            <a href="#!">visa mer</a>
-          </div>
+          <div id="content"></div>
         </div>
       </div>
     </section>
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>

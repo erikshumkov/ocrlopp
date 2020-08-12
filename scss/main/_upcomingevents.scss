@@ -1,7 +1,6 @@
 .upcoming {
-  padding: 80px 0 100px;
-  height: 100vh;
-  background: #000;
+  padding: 80px 0 300px;
+  background: #101010;
   color: #fff;
 
   .container {
@@ -68,16 +67,21 @@
       border-bottom: 1px solid rgba(230, 230, 230, 0.3);
       padding: 20px 0;
 
-      span:first-of-type {
+      .event {
+        align-self: center;
         padding-left: 20px;
         font-weight: bolder;
+        .date-mobile {
+          display: none;
+        }
       }
-      span:nth-of-type(2) {
+      .location {
         display: flex;
         justify-content: space-between;
         padding-right: 70px;
       }
-      span:nth-of-type(2n + 2) {
+      .price,
+      .location {
         color: rgba(255, 255, 255, 0.75);
       }
       span {
@@ -96,14 +100,15 @@
         text-transform: uppercase;
         text-align: center;
         padding: 13px 0px;
-        transition: 0.2s ease all;
+        border-radius: 20px;
+        transition: 0.2s ease background-color;
 
         &:hover {
           background: #aa002a;
         }
       }
     }
-    .race-item:nth-of-type(2n + 3) {
+    .race-item:nth-of-type(2n + 2) {
       background: rgba(230, 230, 230, 0.15);
     }
   }

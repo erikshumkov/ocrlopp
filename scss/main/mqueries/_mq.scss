@@ -1,0 +1,84 @@
+@media (max-width: 900px) {
+  .upcoming {
+    .container {
+      max-width: 98%;
+    }
+    .upcoming-header {
+      h3 {
+        margin-left: 5px;
+        font-size: 26px;
+      }
+    }
+    .upcoming-main {
+      .list-titles {
+        grid-template-columns: repeat(3, 1fr);
+        span:first-of-type {
+          padding-left: 5px;
+        }
+        &__location,
+        &__date {
+          display: none;
+        }
+        &__price {
+          padding-right: 25px;
+          justify-self: center;
+        }
+      }
+      .race-item {
+        grid-template-columns: repeat(3, 1fr);
+        .event {
+          display: flex;
+          flex-direction: column;
+          font-size: 13px;
+          padding-left: 5px;
+          .date-mobile {
+            margin-top: 5px;
+            font-weight: normal;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 50px;
+            .date-mobile__d {
+              font-style: italic;
+              margin-right: 5px;
+              color: rgba(255, 255, 255, 0.75);
+            }
+          }
+        }
+        .price {
+          font-size: 13px;
+        }
+        .price,
+        .action {
+          justify-self: center;
+        }
+        .location {
+          display: none !important;
+        }
+        .date {
+          display: none;
+        }
+        .action {
+          justify-self: end;
+          margin-right: 10px;
+          font-size: 9px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .upcoming {
+    .upcoming-main {
+      .race-item {
+        .event {
+          .date-mobile {
+            justify-content: space-between;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
