@@ -28,7 +28,7 @@ function listContent(arr) {
   <div class="event">
     ${race.name}
     <div class="date-mobile">
-      <span class="date-mobile__d">13 Aug, 2020</span>
+      <span class="date-mobile__d">${race.date}</span>
       <span class="flag-icon flag-icon-${race.country}"></span>
     </div>
   </div>
