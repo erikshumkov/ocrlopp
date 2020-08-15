@@ -2,8 +2,10 @@ import { data } from "./data.js"
 
 const content = document.getElementById("content");
 const landMenu = document.getElementById("landmenu");
+const search = document.getElementById("search")
 const options = []
 const values = []
+
 
 for (let i = 0; i < data.length; i++) {
   if (!options.includes(data[i].countryLong)) options.push(data[i].countryLong)
@@ -53,8 +55,24 @@ function updateList() {
   listContent(filterDataArr);
 }
 
+function searchFilter() {
+  const filterRaces = data.filter(race => {
+    if (
+      race.name.toLocaleLowerCase().includes(search.value.toLocaleLowerCase())
+      ||
+      race.place.toLocaleLowerCase().includes(search.value.toLocaleLowerCase())
+    ) {
+      return race;
+    }
+  })
+
+  listContent(filterRaces);
+}
+
 // Initialize the page with list items
 listContent(data);
 
 // Event listeners
 landMenu.addEventListener("input", updateList)
+
+search.addEventListener("input", searchFilter)
