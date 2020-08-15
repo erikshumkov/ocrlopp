@@ -2,9 +2,6 @@ import { data } from "./data.js"
 
 const content = document.getElementById("content");
 const landMenu = document.getElementById("landmenu");
-
-let racedata = data;
-
 const options = []
 const values = []
 
@@ -46,7 +43,7 @@ function listContent(arr) {
 }
 
 function updateList() {
-  const filterDataArr = racedata.filter(race => {
+  const filterDataArr = data.filter(race => {
 
     if (landMenu.value === "all") return race;
 
@@ -56,6 +53,7 @@ function updateList() {
   listContent(filterDataArr);
 }
 
+// Initialize the page with list items
 listContent(data);
 
 // Event listeners

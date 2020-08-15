@@ -1,16 +1,5 @@
 export const data = [
   {
-    name: "Backamo 12H",
-    place: "Ljungskile",
-    country: "se",
-    countryLong: "Sverige",
-    currency: "SEK",
-    date: "13 Aug, 2020",
-    price: 1095,
-    link: "http://www.militaryfitnessweden.com/"
-  },
-
-  {
     name: "Next Challenge",
     place: "Kalmar",
     country: "se",
@@ -51,7 +40,7 @@ export const data = [
     currency: "DKK",
     date: "26 Sep, 2020",
     price: 349,
-    link: ""
+    link: "http://evolutionrace.dk/"
   },
 
   {
@@ -66,6 +55,28 @@ export const data = [
   },
 
   {
+    name: "Run OCR",
+    place: "Karlshamn",
+    country: "se",
+    countryLong: "Sverige",
+    currency: "SEK",
+    date: "10 Okt, 2020",
+    price: 595,
+    link: "http://www.runocr.se/"
+  },
+
+  {
+    name: "Ragnarok Races",
+    place: "Skåne",
+    country: "se",
+    countryLong: "Sverige",
+    currency: "SEK",
+    date: "31 Okt, 2020",
+    price: 595,
+    link: "https://www.ragnarokraces.com/"
+  },
+
+  {
     name: "Evolution Race MX",
     place: "Copenhagen",
     country: "dk",
@@ -73,6 +84,17 @@ export const data = [
     currency: "DKK",
     date: "21 Nov, 2020",
     price: 349,
-    link: ""
+    link: "http://evolutionrace.dk/"
+  },
+
+  {
+    name: "Winter Warrior Finland",
+    place: "Ylläs",
+    country: "fi",
+    countryLong: "Finland",
+    currency: "EUR",
+    date: "10 Apr, 2021",
+    price: 75,
+    link: "https://winterwarrior.fi/"
   }
 ]
