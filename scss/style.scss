@@ -5,9 +5,24 @@
   font-family: sans-serif;
 }
 
+:root {
+  --main-background-color: #101010;
+  --border-list-titles: 1px solid rgba(230, 230, 230, 0.15);
+  --race-item-background-color: rgba(230, 230, 230, 0.1);
+  --border-race-items: 1px solid rgba(230, 230, 230, 0.15);
+  --link-background-color: #cc0033;
+  --link-background-hover: #aa002a;
+  --price-location-color: rgba(255, 255, 255, 0.75);
+}
+
 html {
-  background: #101010;
+  background: var(--main-background-color);
 }
 
 @import './main/upcomingevents';
 @import './main/mqueries/mq';
+@import './utilities/utils';
+
+.hl {
+  background: var(--link-background-color);
+}
