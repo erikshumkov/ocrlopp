@@ -76,6 +76,14 @@ html {
       font-weight: bolder; }
       .upcoming .upcoming-main .race-item .event .date-mobile {
         display: none; }
+    .upcoming .upcoming-main .race-item .event.no-results {
+      color: darkgrey; }
+      .upcoming .upcoming-main .race-item .event.no-results .clear-field {
+        color: #fff;
+        margin-left: 10px; }
+        .upcoming .upcoming-main .race-item .event.no-results .clear-field:hover {
+          cursor: pointer;
+          border-bottom: 1px solid #fff; }
     .upcoming .upcoming-main .race-item .location {
       display: flex;
       justify-content: space-between;
@@ -92,7 +100,8 @@ html {
       color: #fff;
       background: var(--link-background-color);
       font-weight: bolder;
-      font-size: 12px;
+      letter-spacing: 1px;
+      font-size: 10px;
       text-decoration: none;
       text-transform: uppercase;
       text-align: center;
@@ -101,6 +110,8 @@ html {
       transition: 0.2s ease background-color; }
       .upcoming .upcoming-main .race-item a:hover {
         background: var(--link-background-hover); }
+  .upcoming .upcoming-main .race-item.no-results {
+    grid-template-columns: 2fr repeat(3, 1fr); }
   .upcoming .upcoming-main .race-item:hover {
     background: var(--race-item-background-color);
     border-color: transparent; }
@@ -170,5 +181,8 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   background-color: #3d3d3d; }
+
+.highlight {
+  background: var(--link-background-color); }
 
 /*# sourceMappingURL=style.css.map */
