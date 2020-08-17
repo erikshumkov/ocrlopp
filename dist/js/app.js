@@ -37,7 +37,9 @@ function listContent(arr) {
   ${arr.map(race => `
   <div class="race-item">
   <div class="event">
-    ${race.name.replace(regex, str => `<span class="highlight">${str}</span>`)}
+    <div class="event-text">
+      ${race.name.replace(regex, str => `<span class="highlight">${str}</span>`)}
+    </div>
     <div class="date-mobile">
       <span class="date-mobile__d">${race.date}</span>
       <span class="flag-icon flag-icon-${race.country}"></span>
