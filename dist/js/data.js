@@ -96,5 +96,49 @@ export const data = [
     date: "10 Apr, 2021",
     price: 75,
     link: "https://winterwarrior.fi/"
+  },
+
+  {
+    name: "Toughest",
+    place: "Umeå",
+    country: "se",
+    countryLong: "Sverige",
+    currency: "SEK",
+    date: "5 Jun, 2021",
+    price: 599,
+    link: "https://www.toughest.se/"
+  },
+
+  {
+    name: "Tough Viking",
+    place: "Oslo",
+    country: "no",
+    countryLong: "Norge",
+    currency: "SEK",
+    date: "5 Jun, 2021",
+    price: 795,
+    link: "https://www.toughviking.se/"
+  },
+
+  {
+    name: "Toughest",
+    place: "Vörå / Vaasa",
+    country: "fi",
+    countryLong: "Finland",
+    currency: "EUR",
+    date: "14 Aug, 2021",
+    price: 65,
+    link: "https://www.toughest.se/"
+  },
+
+  {
+    name: "Tough Viking",
+    place: "Helsingfors",
+    country: "fi",
+    countryLong: "Finland",
+    currency: "EUR",
+    date: "11 Sep, 2021",
+    price: 80,
+    link: "https://www.toughviking.se/"
   }
 ]

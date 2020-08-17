@@ -85,7 +85,9 @@ html {
           cursor: pointer;
           border-bottom: 1px solid #fff; }
     .upcoming .upcoming-main .race-item .location {
-      display: flex; }
+      display: flex;
+      justify-content: space-between;
+      padding-right: 70px; }
     .upcoming .upcoming-main .race-item .price,
     .upcoming .upcoming-main .race-item .location {
       color: var(--price-location-color); }
@@ -180,7 +182,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #3d3d3d; }
 
-.hl {
+.highlight {
   background: var(--link-background-color); }
 
 /*# sourceMappingURL=style.css.map */
