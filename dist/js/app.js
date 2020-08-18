@@ -6,12 +6,17 @@ const search = document.getElementById("search")
 const options = []
 const values = []
 
+// Push country names and country shorthand names to arrays
 for (let i = 0; i < data.length; i++) {
   if (!options.includes(data[i].countryLong)) options.push(data[i].countryLong)
 
   if (!values.includes(data[i].country)) values.push(data[i].country)
+
+  options.sort();
+  values.sort();
 }
 
+// Add options and values to select menu from options/values arrays
 landMenu.innerHTML = `
   <option value="all">Alla</option>
   ${options.map((country, index) => `
@@ -19,6 +24,7 @@ landMenu.innerHTML = `
   `)}
 `
 
+// Add the HTML / the list items
 function listContent(arr) {
 
   const regex = new RegExp(search.value, 'gi');
@@ -28,7 +34,7 @@ function listContent(arr) {
   if (arr.length === 0) return content.innerHTML = `
   <div class="race-item no-results">
     <div class="event no-results">
-      Inga resultat för "${search.value}". <span class="clear-field">Rensa sökfältet</span>
+      Inga resultat för "${str}". <span class="clear-field">Rensa sökfältet</span>
     </div>
   </div>
   `
@@ -62,7 +68,8 @@ function listContent(arr) {
     } `
 }
 
-function updateList() {
+// Filters by country. With select menu
+function updateListWithSelect() {
 
   // Clear search field
   search.value = ""
@@ -77,6 +84,7 @@ function updateList() {
   listContent(filterRaces);
 }
 
+// Listens for user input in search bar
 function searchFilter() {
 
   // Clear select menu
@@ -93,6 +101,7 @@ function searchFilter() {
   listContent(filterRaces);
 }
 
+// If no matches are found the user can click to clear search field
 function clearSearchField(e) {
   if (e.target.className = "clear-field") {
     search.value = "";
@@ -104,7 +113,7 @@ function clearSearchField(e) {
 listContent(data);
 
 // Event listeners
-landMenu.addEventListener("input", updateList)
+landMenu.addEventListener("input", updateListWithSelect)
 
 // Updates racelist with every keypress
 search.addEventListener("input", searchFilter)

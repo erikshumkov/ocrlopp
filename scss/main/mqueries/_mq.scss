@@ -72,6 +72,12 @@
           letter-spacing: 1px;
         }
       }
+      .race-item.no-results {
+        grid-template-columns: 1fr;
+        .event.no-results {
+          flex-direction: row;
+        }
+      }
     }
   }
 }
