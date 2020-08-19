@@ -16,6 +16,46 @@ for (let i = 0; i < data.length; i++) {
   values.sort();
 }
 
+const UICtrl = (function () {
+
+  // Public Methods
+  return {
+    // Listens for user input in search bar
+    searchFilter: function () {
+      // Clear select menu
+      landMenu.value = "all"
+
+      const filterRaces = data.filter(race => {
+        const regex = new RegExp(search.value, 'gi')
+
+        if (race.name.match(regex) || race.place.match(regex)) {
+          return race;
+        }
+      })
+      listContent(filterRaces);
+    },
+
+    // Filters by country. With select menu
+    updateListWithSelect: function () {
+      // Clear search field
+      search.value = ""
+      const filterRaces = data.filter(race => {
+        if (landMenu.value === "all") return race;
+        if (race.country === landMenu.value) return race;
+      })
+      listContent(filterRaces);
+    },
+
+    // If no matches are found the user can click to clear search field
+    clearSearchField: function (e) {
+      if (e.target.className = "clear-field") {
+        search.value = "";
+        listContent(data);
+      }
+    }
+  }
+})();
+
 // Add options and values to select menu from options/values arrays
 landMenu.innerHTML = `
   <option value="all">Alla</option>
@@ -68,55 +108,23 @@ function listContent(arr) {
     } `
 }
 
-// Filters by country. With select menu
-function updateListWithSelect() {
-
-  // Clear search field
-  search.value = ""
-
-  const filterRaces = data.filter(race => {
-
-    if (landMenu.value === "all") return race;
-
-    if (race.country === landMenu.value) return race;
-  })
-
-  listContent(filterRaces);
-}
-
-// Listens for user input in search bar
-function searchFilter() {
-
-  // Clear select menu
-  landMenu.value = "all"
-
-  const filterRaces = data.filter(race => {
-    const regex = new RegExp(search.value, 'gi')
-
-    if (race.name.match(regex) || race.place.match(regex)) {
-      return race;
-    }
-  })
-
-  listContent(filterRaces);
-}
-
-// If no matches are found the user can click to clear search field
-function clearSearchField(e) {
-  if (e.target.className = "clear-field") {
-    search.value = "";
-    listContent(data);
-  }
-}
 
 // Initialize the page with list items
 listContent(data);
 
 // Event listeners
-landMenu.addEventListener("input", updateListWithSelect)
+landMenu.addEventListener("input", UICtrl.updateListWithSelect)
 
 // Updates racelist with every keypress
-search.addEventListener("input", searchFilter)
+search.addEventListener("input", UICtrl.searchFilter)
 
 // Clears search field
-content.addEventListener("click", clearSearchField)
+content.addEventListener("click", UICtrl.clearSearchField)
+
+
+// App Controller..
+// const App = (function (ItemCtrl) {
+
+// })(ItemCtrl);
+
+// App.init();
