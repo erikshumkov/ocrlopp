@@ -4,17 +4,17 @@
   box-sizing: border-box;
   font-family: sans-serif; }
 
+html {
+  background: var(--main-background-color); }
+
 :root {
   --main-background-color: #101010;
   --border-list-titles: 1px solid rgba(230, 230, 230, 0.15);
-  --race-item-background-color: rgba(230, 230, 230, 0.1);
+  --race-item-background-color: rgba(230, 230, 230, 0.15);
   --border-race-items: 1px solid rgba(230, 230, 230, 0.15);
   --link-background-color: #cc0033;
   --link-background-hover: #aa002a;
   --price-location-color: rgba(255, 255, 255, 0.75); }
-
-html {
-  background: var(--main-background-color); }
 
 .upcoming {
   padding: 80px 0 300px;
@@ -116,6 +116,9 @@ html {
     background: var(--race-item-background-color);
     border-color: transparent; }
 
+.highlight {
+  background: var(--link-background-color); }
+
 @media (max-width: 900px) {
   .upcoming .container {
     max-width: 98%; }
@@ -167,7 +170,11 @@ html {
       justify-self: end;
       margin-right: 10px;
       font-size: 9px;
-      letter-spacing: 1px; } }
+      letter-spacing: 1px; }
+  .upcoming .upcoming-main .race-item.no-results {
+    grid-template-columns: 1fr; }
+    .upcoming .upcoming-main .race-item.no-results .event.no-results {
+      flex-direction: row; } }
 @media (max-width: 500px) {
   .upcoming .upcoming-main .race-item .event .date-mobile {
     justify-content: space-between;
@@ -181,8 +188,5 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   background-color: #3d3d3d; }
-
-.highlight {
-  background: var(--link-background-color); }
 
 /*# sourceMappingURL=style.css.map */
