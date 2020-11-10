@@ -93,7 +93,7 @@ html {
       color: var(--price-location-color); }
     .upcoming .upcoming-main .race-item span {
       align-self: center; }
-    .upcoming .upcoming-main .race-item a {
+    .upcoming .upcoming-main .race-item a.action {
       align-self: center;
       display: inline-block;
       width: 110px;
@@ -108,8 +108,25 @@ html {
       padding: 13px 0px;
       border-radius: 20px;
       transition: 0.2s ease background-color; }
-      .upcoming .upcoming-main .race-item a:hover {
+      .upcoming .upcoming-main .race-item a.action:hover {
         background: var(--link-background-hover); }
+    .upcoming .upcoming-main .race-item a.undefined {
+      align-self: center;
+      display: inline-block;
+      width: 110px;
+      color: #fff;
+      font-weight: bolder;
+      letter-spacing: 1px;
+      font-size: 10px;
+      text-decoration: line-through;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 13px 0px;
+      border-radius: 20px;
+      transition: 0.2s ease background-color;
+      background: grey; }
+      .upcoming .upcoming-main .race-item a.undefined:hover {
+        cursor: not-allowed; }
   .upcoming .upcoming-main .race-item.no-results {
     grid-template-columns: 2fr repeat(3, 1fr); }
   .upcoming .upcoming-main .race-item:hover {

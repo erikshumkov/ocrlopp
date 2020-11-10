@@ -1,38 +1,5 @@
 export const data = [
   {
-    name: "Next Challenge",
-    place: "Kalmar",
-    country: "se",
-    countryLong: "Sverige",
-    currency: "SEK",
-    date: "29 Aug, 2020",
-    price: 645,
-    link: "https://www.nextchallenge.se/"
-  },
-
-  {
-    name: "Fåle 9k",
-    place: "Limmared",
-    country: "se",
-    countryLong: "Sverige",
-    currency: "SEK",
-    date: "19 Sep, 2020",
-    price: 395,
-    link: "https://worldofraces.com/events/20eddc-Figf-asle"
-  },
-
-  {
-    name: "Tylösand OCR",
-    place: "Halmstad",
-    country: "se",
-    countryLong: "Sverige",
-    currency: "SEK",
-    date: "19 Sep, 2020",
-    price: 600,
-    link: "http://www.tylosandocr.se/"
-  },
-
-  {
     name: "Evolution Race Mountain",
     place: "Hedehusene",
     country: "dk",
@@ -66,6 +33,39 @@ export const data = [
   },
 
   {
+    name: "Tough Viking Stadium Series",
+    place: "Stockholm",
+    country: "se",
+    countryLong: "Sverige",
+    currency: "SEK",
+    date: "10 Okt, 2020",
+    price: 750,
+    link: "http://toughviking.se/"
+  },
+
+  {
+    name: "OCR SM by HELLRUN",
+    place: "Mjölby",
+    country: "se",
+    countryLong: "Sverige",
+    currency: "SEK",
+    date: "17 Okt, 2020",
+    price: 595,
+    link: "https://www.hellrun.se/"
+  },
+
+  {
+    name: "Tough Viking Stadium Series",
+    place: "Göteborg",
+    country: "se",
+    countryLong: "Sverige",
+    currency: "SEK",
+    date: "24 Okt, 2020",
+    price: 750,
+    link: "http://toughviking.se/"
+  },
+
+  {
     name: "Ragnarok Races",
     place: "Skåne",
     country: "se",
@@ -85,6 +85,17 @@ export const data = [
     date: "21 Nov, 2020",
     price: 349,
     link: "http://evolutionrace.dk/"
+  },
+
+  {
+    name: "OCR Golden Trophy",
+    place: "Backamo",
+    country: "se",
+    countryLong: "Sverige",
+    currency: "SEK",
+    date: "3 Apr, 2021",
+    price: 1,
+    link: "https://worldofraces.com/events/OCRGTBackamo"
   },
 
   {

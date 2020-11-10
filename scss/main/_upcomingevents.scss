@@ -107,7 +107,7 @@
         align-self: center;
       }
 
-      a {
+      a.action {
         align-self: center;
         display: inline-block;
         width: 110px;
@@ -125,6 +125,25 @@
 
         &:hover {
           background: var(--link-background-hover);
+        }
+      }
+      a.undefined {
+        align-self: center;
+        display: inline-block;
+        width: 110px;
+        color: #fff;
+        font-weight: bolder;
+        letter-spacing: 1px;
+        font-size: 10px;
+        text-decoration: line-through;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 13px 0px;
+        border-radius: 20px;
+        transition: 0.2s ease background-color;
+        background: grey;
+        &:hover {
+          cursor: not-allowed;
         }
       }
     }
