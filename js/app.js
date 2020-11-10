@@ -162,7 +162,6 @@ const App = (function (UICtrl) {
 
       // Initialize select menu with options
       // UICtrl.populateCountryFilter();
-      console.log(data);
     }
   }
 })(UICtrl);
