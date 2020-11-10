@@ -1,4 +1,4 @@
-import { data } from "./data.js"
+let data;
 
 const UICtrl = (function () {
   const UISelectors = {
@@ -6,32 +6,32 @@ const UICtrl = (function () {
     landMenu: "#landmenu",
     search: "#search"
   }
-  const options = []
-  const values = []
+  // const options = []
+  // const values = []
 
   // Push country names and country shorthand names to arrays
-  data.forEach(data => {
-    if (!options.includes(data.countryLong)) options.push(data.countryLong)
+  // data.forEach(data => {
+  //   if (!options.includes(data.countryLong)) options.push(data.countryLong)
 
-    if (!values.includes(data.country)) values.push(data.country)
+  //   if (!values.includes(data.country)) values.push(data.country)
 
-    options.sort();
-    values.sort();
-  })
+  //   options.sort();
+  //   values.sort();
+  // })
 
   // Public Methods
   return {
-    populateCountryFilter: function () {
-      // Add options and values to select menu from options/values arrays
-      const html = `
-      <option value="all">Alla</option>
-      ${options.map((country, index) => `
-      <option value="${values[index]}">${country}</option>
-      `)}
-      `
+    // populateCountryFilter: function () {
+    //   // Add options and values to select menu from options/values arrays
+    //   const html = `
+    //   <option value="all">Alla</option>
+    //   ${options.map((country, index) => `
+    //   <option value="${values[index]}">${country}</option>
+    //   `)}
+    //   `
 
-      document.querySelector(UISelectors.landMenu).innerHTML = html;
-    },
+    //   document.querySelector(UISelectors.landMenu).innerHTML = html;
+    // },
     // Add the HTML / the list items
     populateListItems: function (arr) {
 
@@ -52,24 +52,24 @@ const UICtrl = (function () {
         <div class="race-item">
         <div class="event">
           <div class="event-text">
-            ${race.name.replace(regex, str => `<span class="highlight">${str}</span>`)}
+            ${race.event.replace(regex, str => `<span class="highlight">${str}</span>`)}
           </div>
           <div class="date-mobile">
             <span class="date-mobile__d">${race.date}</span>
-            <span class="flag-icon flag-icon-${race.country}"></span>
+            <span class="flag-icon flag-icon-${race.flag.toLowerCase()}"></span>
           </div>
         </div>
         <span class="location"
           >
           <div class="place-text">
           ${race.place.replace(regex, str => `<span class="highlight">${str}</span>`)}
-          </div > <span class="flag-icon flag-icon-${race.country}"></span
+          </div > <span class="flag-icon flag-icon-${race.flag.toLowerCase()}"></span
       ></span >
         <span class="date">${race.date}</span>
         <span class="price">${race.price} ${race.currency}</span>
         <a
-          class="action"
-          href="${race.link}"
+        ${race.website === null ? "class='undefined'" : "class='action'"}
+          ${race.website === null ? "" : `href="${race.website}"`}
           target="_blank">till hemsida</a>
         </div >
         `).join("")
@@ -78,12 +78,12 @@ const UICtrl = (function () {
     // Listens for user input in search bar
     searchFilter: function () {
       // Clear select menu
-      document.querySelector(UISelectors.landMenu).value = "all"
+      // document.querySelector(UISelectors.landMenu).value = "all"
 
       const filterRaces = data.filter(race => {
         const regex = new RegExp(search.value, 'gi')
 
-        if (race.name.match(regex) || race.place.match(regex)) {
+        if (race.event.match(regex) || race.place.match(regex)) {
           return race;
         }
       })
@@ -121,7 +121,7 @@ const App = (function (UICtrl) {
   const loadEventListeners = function () {
     const UISelectors = UICtrl.getSelectors()
     // Event listeners
-    document.querySelector(UISelectors.landMenu).addEventListener("input", updateListSelectInput)
+    // document.querySelector(UISelectors.landMenu).addEventListener("input", updateListSelectInput)
 
     // Updates racelist with every keypress
     document.querySelector(UISelectors.search).addEventListener("input", searchFilterInput)
@@ -144,17 +144,29 @@ const App = (function (UICtrl) {
 
   // Public methods
   return {
-    init: function () {
+    init: async function () {
       loadEventListeners();
+
+      async function fetchraces() {
+        const response = await fetch("./data/races.json");
+
+        const data = await response.json();
+
+        return data;
+      }
+
+      data = await fetchraces();
 
       // Initialize the page with list items
       UICtrl.populateListItems(data);
 
       // Initialize select menu with options
-      UICtrl.populateCountryFilter();
+      // UICtrl.populateCountryFilter();
+      console.log(data);
     }
   }
 })(UICtrl);
 
 // Initialize App
 App.init();
+
