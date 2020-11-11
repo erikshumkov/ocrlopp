@@ -55,17 +55,17 @@ const UICtrl = (function () {
             ${race.event.replace(regex, str => `<span class="highlight">${str}</span>`)}
           </div>
           <div class="date-mobile">
-            <span class="date-mobile__d">${race.date}</span>
-            <span class="flag-icon flag-icon-${race.flag.toLowerCase()}"></span>
+            <span class="date-mobile__d">${moment(race.date).format("D MMMM, YYYY")}</span>
+            <span class="${race.flag === null ? "" : `flag-icon flag-icon-${race.flag.toLowerCase()}`}"></span>
           </div>
         </div>
         <span class="location"
           >
           <div class="place-text">
           ${race.place.replace(regex, str => `<span class="highlight">${str}</span>`)}
-          </div > <span class="flag-icon flag-icon-${race.flag.toLowerCase()}"></span
+          </div > <span class="${race.flag === null ? "" : `flag-icon flag-icon-${race.flag.toLowerCase()}`}"></span
       ></span >
-        <span class="date">${race.date}</span>
+        <span class="date">${moment(race.date).format("D MMMM, YYYY")}</span>
         <span class="price">${race.price} ${race.currency}</span>
         <a
         ${race.website === null ? "class='undefined'" : "class='action'"}
@@ -156,6 +156,9 @@ const App = (function (UICtrl) {
       }
 
       data = await fetchraces();
+
+      // Sort data by date
+      data.sort((a, b) => new Date(a.date) - new Date(b.date))
 
       // Initialize the page with list items
       UICtrl.populateListItems(data);
